@@ -5,10 +5,11 @@ from abc import ABC, abstractmethod
 class AbstractFactory(ABC):
     """
     Интерфейс Абстрактной Фабрики объявляет набор методов, которые возвращают
-    различные абстрактные продукты. Эти продукты называются семейством и связаны
-    темой или концепцией высокого уровня. Продукты одного семейства обычно могут
-    взаимодействовать между собой. Семейство продуктов может иметь несколько
-    вариаций, но продукты одной вариации несовместимы с продуктами другой.
+    различные абстрактные продукты. Эти продукты называются семейством и
+    связаны темой или концепцией высокого уровня. Продукты одного семейства
+    обычно могут взаимодействовать между собой. Семейство продуктов может
+    иметь несколько вариаций, но продукты одной вариации несовместимы с
+    продуктами другой.
     """
     @abstractmethod
     def create_driver(self):
@@ -53,8 +54,9 @@ class BusFactory(AbstractFactory):
 
 class AbstractDriver(ABC):
     """
-    Каждый отдельный продукт семейства продуктов должен иметь базовый интерфейс.
-    Все вариации продукта должны реализовывать этот интерфейс.
+    Каждый отдельный продукт семейства продуктов должен иметь
+    базовый интерфейс. Все вариации продукта должны реализовывать
+    этот интерфейс.
     """
 
     drivers_license = None
@@ -65,7 +67,7 @@ class TaxiDriver(AbstractDriver):
 
 
 class BusDriver(AbstractDriver):
-    AbstractDriver.drivers_license = "A"
+    AbstractDriver.drivers_license = "D"
 
 
 class AbstractTransport(ABC):
@@ -95,10 +97,11 @@ class AbstractTransport(ABC):
         """
         print("выполняется посадка водителя")
         if self._driver is False:
-            self._driver == True
+            self._driver = True
             print("Водитель посажен")
         else:
             print("Место водителя занято")
+
 
 class Bus(AbstractTransport):
     _capacity = 30
@@ -122,10 +125,11 @@ class Taxi(AbstractTransport):
 
     def put_the_passenger(self, passenger):
         return super().put_the_passenger(passenger)
-    
+
 
 class Passenger():
     pass
+
 
 def client_code(factory: AbstractFactory) -> None:
     """
