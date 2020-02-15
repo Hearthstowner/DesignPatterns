@@ -109,7 +109,8 @@ class Bus(AbstractTransport):
     _driver = False
 
     def put_the_driver(self, driver):
-        return super().put_the_driver(driver)
+        if driver == BusDriver:
+            return super().put_the_driver(driver)
 
     def put_the_passenger(self, passenger):
         return super().put_the_passenger(passenger)
@@ -121,7 +122,8 @@ class Taxi(AbstractTransport):
     _driver = False
 
     def put_the_driver(self, driver):
-        return super().put_the_driver(driver)
+        if driver == TaxiDriver:
+            return super().put_the_driver(driver)
 
     def put_the_passenger(self, passenger):
         return super().put_the_passenger(passenger)
