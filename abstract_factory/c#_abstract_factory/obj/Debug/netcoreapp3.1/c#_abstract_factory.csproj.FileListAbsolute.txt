@@ -1,0 +1,11 @@
+G:\projects\all\DesignPatterns\abstract_factory\c#_abstract_factory\bin\Debug\netcoreapp3.1\c#_abstract_factory.exe
+G:\projects\all\DesignPatterns\abstract_factory\c#_abstract_factory\bin\Debug\netcoreapp3.1\c#_abstract_factory.deps.json
+G:\projects\all\DesignPatterns\abstract_factory\c#_abstract_factory\bin\Debug\netcoreapp3.1\c#_abstract_factory.runtimeconfig.json
+G:\projects\all\DesignPatterns\abstract_factory\c#_abstract_factory\bin\Debug\netcoreapp3.1\c#_abstract_factory.runtimeconfig.dev.json
+G:\projects\all\DesignPatterns\abstract_factory\c#_abstract_factory\bin\Debug\netcoreapp3.1\c#_abstract_factory.dll
+G:\projects\all\DesignPatterns\abstract_factory\c#_abstract_factory\bin\Debug\netcoreapp3.1\c#_abstract_factory.pdb
+G:\projects\all\DesignPatterns\abstract_factory\c#_abstract_factory\obj\Debug\netcoreapp3.1\c#_abstract_factory.csprojAssemblyReference.cache
+G:\projects\all\DesignPatterns\abstract_factory\c#_abstract_factory\obj\Debug\netcoreapp3.1\c#_abstract_factory.AssemblyInfoInputs.cache
+G:\projects\all\DesignPatterns\abstract_factory\c#_abstract_factory\obj\Debug\netcoreapp3.1\c#_abstract_factory.AssemblyInfo.cs
+G:\projects\all\DesignPatterns\abstract_factory\c#_abstract_factory\obj\Debug\netcoreapp3.1\c#_abstract_factory.dll
+G:\projects\all\DesignPatterns\abstract_factory\c#_abstract_factory\obj\Debug\netcoreapp3.1\c#_abstract_factory.pdb
