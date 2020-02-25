@@ -52,7 +52,7 @@ class BusFactory(AbstractFactory):
         return Bus()
 
 
-class AbstractDriver(ABC):
+class AbstractDriver():
     """
     Каждый отдельный продукт семейства продуктов должен иметь
     базовый интерфейс. Все вариации продукта должны реализовывать
@@ -70,32 +70,32 @@ class BusDriver(AbstractDriver):
     AbstractDriver.drivers_license = "D"
 
 
-class AbstractTransport(ABC):
+class AbstractTransport():
     """
     Абстрактный транспорт (класс)
     """
 
     _capacity = None
     _drivers_license = None
-    _driver = None
+    _driver = False
 
     def put_the_passenger(self, passenger: Passenger) -> None:
         """
-        Посадить посажира в транспорт
+        Посадить пассажира в транспорт
         """
-        print("Taxi: выполняется посадка посажира")
+        print("Выполняется посадка пассажира")
         if self._capacity > 0:
-            print("Taxi: Вместимость уменьшилась на 1")
+            print("Вместимость уменьшилась на 1")
             self._capacity -= 1
             print("Осталось мест: ", self._capacity)
         else:
             print("Все места заняты")
 
-    def put_the_driver(self, driver: TaxiDriver) -> None:
+    def put_the_driver(self, driver: AbstractDriver) -> None:
         """
         Посадить водителя в транспорт
         """
-        print("выполняется посадка водителя")
+        print("Выполняется посадка водителя")
         if self._driver is False:
             self._driver = True
             print("Водитель посажен")
@@ -109,7 +109,7 @@ class Bus(AbstractTransport):
     _driver = False
 
     def put_the_driver(self, driver):
-        if driver == BusDriver:
+        if isinstance(driver, BusDriver):
             return super().put_the_driver(driver)
 
     def put_the_passenger(self, passenger):
@@ -122,7 +122,7 @@ class Taxi(AbstractTransport):
     _driver = False
 
     def put_the_driver(self, driver):
-        if driver == TaxiDriver:
+        if isinstance(driver, TaxiDriver):
             return super().put_the_driver(driver)
 
     def put_the_passenger(self, passenger):
@@ -161,8 +161,8 @@ if __name__ == "__main__":
     Клиентский код может работать с любым конкретным классом фабрики.
     """
 
-    print("Автобус", end='\n\n')
+    print("Автобус")
     client_code(BusFactory())
 
-    print("\nТеперь такси", end='\n\n')
+    print("\nТеперь такси")
     client_code(TaxiFactory())
