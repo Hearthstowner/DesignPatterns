@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>lab2</OriginalElement>
+  <nodes>
+    <node x="0.0" y="380.0">lab2.BusBuilder</node>
+    <node x="152.0" y="79.0">lab2.TaxiPassenger</node>
+    <node x="88.25" y="0.0">lab2.Passenger</node>
+    <node x="312.25" y="153.0">lab2.AbstractCar</node>
+    <node x="81.25" y="153.0">lab2.Driver</node>
+    <node x="138.0" y="232.0">lab2.BusDriver</node>
+    <node x="163.0" y="380.0">lab2.Main</node>
+    <node x="383.0" y="232.0">lab2.Taxi</node>
+    <node x="205.0" y="306.0">lab2.TaxiBuilder</node>
+    <node x="0.0" y="79.0">lab2.BusPassenger</node>
+    <node x="294.0" y="232.0">lab2.Bus</node>
+    <node x="0.0" y="232.0">lab2.TaxiDriver</node>
+    <node x="0.0" y="306.0">lab2.BusPassengerType</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="lab2.Taxi" target="lab2.AbstractCar">
+      <point x="0.0" y="-14.5" />
+      <point x="421.0" y="207.0" />
+      <point x="406.0" y="207.0" />
+      <point x="31.25" y="14.5" />
+    </edge>
+    <edge source="lab2.BusPassenger" target="lab2.Passenger">
+      <point x="0.0" y="-14.5" />
+      <point x="66.0" y="54.0" />
+      <point x="116.0" y="54.0" />
+      <point x="-27.75" y="14.5" />
+    </edge>
+    <edge source="lab2.TaxiDriver" target="lab2.Driver">
+      <point x="0.0" y="-14.5" />
+      <point x="59.0" y="207.0" />
+      <point x="103.75" y="207.0" />
+      <point x="-22.5" y="14.5" />
+    </edge>
+    <edge source="lab2.TaxiPassenger" target="lab2.Passenger">
+      <point x="0.0" y="-14.5" />
+      <point x="221.5" y="54.0" />
+      <point x="171.5" y="54.0" />
+      <point x="27.75" y="14.5" />
+    </edge>
+    <edge source="lab2.BusDriver" target="lab2.Driver">
+      <point x="0.0" y="-14.5" />
+      <point x="193.5" y="207.0" />
+      <point x="148.75" y="207.0" />
+      <point x="22.5" y="14.5" />
+    </edge>
+    <edge source="lab2.Bus" target="lab2.AbstractCar">
+      <point x="0.0" y="-14.5" />
+      <point x="328.5" y="207.0" />
+      <point x="343.5" y="207.0" />
+      <point x="-31.25" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="229.5" y="204.5" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
