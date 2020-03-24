@@ -1,29 +1,64 @@
 package lab2;
 
-class Taxi extends AbstractCar {
+import java.util.ArrayList;
+import java.util.List;
+
+class Taxi {
     private boolean _childSeat = false;
+    private final String _licence;
+    private final int _capacity;
+
+    private TaxiDriver _driver;
+
+    private List<Passenger> _passengers;
+
 
     Taxi() {
-        super("B", 4);
+        _licence = "B";
+        _capacity = 4;
+        _passengers = new ArrayList<Passenger>(_capacity);
     }
 
-    void AddChildSit() {
-        _childSeat = true;
+    private String GetLicence() {
+        return _licence;
     }
 
     void BoardPassenger(TaxiPassenger passenger) {
         if (passenger.IsChild() && !HasChildSeat()) {
             throw new Error("Can't board child without child seat");
         }
-        super.BoardPassenger(passenger);
+        if (_passengers.size() == _capacity) {
+            throw new Error("No more seats");
+        }
+        _passengers.add(passenger);
+    }
+
+    void AddChildSit() {
+        _childSeat = true;
     }
 
     void BoardDriver(TaxiDriver driver) {
-        super.BoardDriver(driver);
+        if (!driver.GetLicence().equals(GetLicence())) {
+            throw new Error("Incompatible licence");
+        }
+        if (_driver != null) {
+            throw new Error("Driver already boarded");
+        }
+        _driver = driver;
     }
 
     private boolean HasChildSeat() {
         return _childSeat;
+    }
+
+    void Run() {
+        if (_driver == null) {
+            throw new Error("Can't run without driver");
+        }
+        if (_passengers.size() == 0) {
+            throw new Error("Can't run without passengers");
+        }
+        System.out.println("Transport on the way!");
     }
 
 }

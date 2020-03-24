@@ -6,7 +6,6 @@ public class TaxiPassenger extends Passenger {
     TaxiPassenger(boolean isAdult) {
         _isAdult = isAdult;
     }
-
     public boolean IsAdult(){
         return _isAdult;
     }

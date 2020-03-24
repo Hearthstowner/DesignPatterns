@@ -1,7 +1,13 @@
 package lab2;
 
-class TaxiDriver extends Driver {
-    TaxiDriver() {
-        super("B");
+class TaxiDriver extends Driver{
+    private final String _licence;
+
+    TaxiDriver(String licence) {
+        _licence = licence;
+    }
+
+    String GetLicence(){
+        return _licence;
     }
 }

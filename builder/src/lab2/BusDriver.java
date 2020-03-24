@@ -1,7 +1,13 @@
 package lab2;
 
 class BusDriver extends Driver {
-    BusDriver() {
-        super("D");
+    private final String _licence;
+
+    BusDriver(String licence) {
+        _licence = licence;
+    }
+
+    String GetLicence(){
+        return _licence;
     }
 }

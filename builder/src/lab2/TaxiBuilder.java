@@ -1,41 +1,28 @@
 package lab2;
 
-public class TaxiBuilder {
-    public AbstractCar taxi;
+public class TaxiBuilder implements Builder{
     private Taxi _taxi = null;
 
     TaxiBuilder() {
         _taxi = new Taxi();
     }
 
-    public TaxiBuilder Taxi() {
-        return this;
+    @Override
+    public void BoardDriver() {
+        _taxi.BoardDriver(new TaxiDriver("B"));
     }
 
-    TaxiBuilder BoardDriver() {
-        _taxi.BoardDriver(new TaxiDriver());
-        return this;
-    }
-
-    TaxiBuilder BoardPassenger(TaxiPassenger passenger) {
-        _taxi.BoardPassenger(passenger);
-        return this;
-    }
-
-    public TaxiBuilder BoardPassenger(Iterable<TaxiPassenger> passengers) {
-        for (var passenger : passengers
-        ) {
-            _taxi.BoardPassenger(passenger);
-        }
-        return this;
-    }
-
-    TaxiBuilder AddChildSeat() {
+    @Override
+    public void AddChildSeat() {
         _taxi.AddChildSit();
-        return this;
     }
 
-    Taxi GetTaxi() {
+    @Override
+    public void BoardPassenger(Passenger passenger) {
+        _taxi.BoardPassenger((TaxiPassenger) passenger);
+    }
+
+    Taxi GetResult() {
         var old_taxi = _taxi;
         _taxi = null;
         return old_taxi;

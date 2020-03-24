@@ -1,23 +1,21 @@
 package lab2;
 
-class BusBuilder {
-    private Bus _bus;
+class BusBuilder implements Builder {
+    private Bus _bus = null;
 
     BusBuilder() {
         _bus = new Bus();
     }
 
-
-    BusBuilder BoardPassenger(BusPassenger... passengers){
-        for (var pas:passengers
-             ) {
-            BoardPassenger(pas);
-        }
-        return this;
+    @Override
+    public void BoardDriver() {
+        _bus.BoardDriver(new BusDriver("D"));
     }
-    BusBuilder BoardPassenger(BusPassenger passenger){
-        _bus.BoardPassenger(passenger);
-        switch (passenger.GetBusPassengerType()){
+
+    @Override
+    public void BoardPassenger(Passenger passenger) {
+        _bus.BoardPassenger((BusPassenger) passenger);
+        switch (((BusPassenger) passenger).GetBusPassengerType()){
             case ADULT:
                 _bus._overallCost += 100;
                 break;
@@ -28,19 +26,14 @@ class BusBuilder {
                 _bus._overallCost += 25;
                 break;
         }
-        return this;
     }
 
-    BusBuilder BoardDriver(){
-        _bus.BoardDriver(new BusDriver());
-        return this;
+    @Override
+    public void AddChildSeat() {}
+
+    public Bus GetResult() {
+        var old_taxi = _bus;
+        _bus = null;
+        return old_taxi;
     }
-
-    Bus GetBus(){
-        var old_bus = _bus;
-        _bus = new Bus();
-        return old_bus;
-    }
-
-
 }
