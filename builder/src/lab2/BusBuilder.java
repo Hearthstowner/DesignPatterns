@@ -14,20 +14,20 @@ class BusBuilder implements Builder {
 
     @Override
     public void BoardPassenger(Passenger passenger) {
-        _bus.BoardPassenger((BusPassenger) passenger);
+        _bus.BoardPassenger(passenger);
         _bus._overallCost += 100;
 
     }
 
     @Override
     public void BoardChildPassenger(Passenger passenger) {
-        _bus.BoardPassenger((BusPassenger) passenger);
+        _bus.BoardPassenger(passenger);
         _bus._overallCost += 50;
     }
 
     @Override
     public void BoardDiscountPassenger(Passenger passenger) {
-        _bus.BoardPassenger((BusPassenger) passenger);
+        _bus.BoardPassenger(passenger);
         _bus._overallCost += 25;
     }
 

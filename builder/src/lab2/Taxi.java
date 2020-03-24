@@ -23,9 +23,15 @@ class Taxi {
         return _licence;
     }
 
-    void BoardPassenger(TaxiPassenger passenger) {
-        if (passenger.IsChild() && !HasChildSeat()) {
-            throw new Error("Can't board child without child seat");
+    void BoardPassenger(Passenger passenger) {
+        if (_passengers.size() == _capacity) {
+            throw new Error("No more seats");
+        }
+        _passengers.add(passenger);
+    }
+    void BoardChildPassenger(Passenger passenger) {
+        if (!HasChildSeat()) {
+            throw new Error("No Child Sit");
         }
         if (_passengers.size() == _capacity) {
             throw new Error("No more seats");

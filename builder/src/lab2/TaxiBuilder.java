@@ -19,7 +19,7 @@ public class TaxiBuilder implements Builder{
 
     @Override
     public void BoardPassenger(Passenger passenger) {
-        _taxi.BoardPassenger((TaxiPassenger) passenger);
+        _taxi.BoardPassenger(passenger);
     }
 
     Taxi GetResult() {
@@ -29,7 +29,9 @@ public class TaxiBuilder implements Builder{
     }
 
     @Override
-    public void BoardChildPassenger(Passenger passenger) {}
+    public void BoardChildPassenger(Passenger passenger) {
+        _taxi.BoardChildPassenger(passenger);
+    }
 
     @Override
     public void BoardDiscountPassenger(Passenger passenger) {}

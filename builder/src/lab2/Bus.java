@@ -10,7 +10,7 @@ class Bus {
 
     private BusDriver _driver;
 
-    private List<BusPassenger> _passengers;
+    private List<Passenger> _passengers;
 
     Bus() {
         _licence = "D";
@@ -32,7 +32,7 @@ class Bus {
         _driver = driver;
     }
 
-    void BoardPassenger(BusPassenger passenger){
+    void BoardPassenger(Passenger passenger){
         if (_passengers.size() == _capacity) {
             throw new Error("No more seats");
         }
