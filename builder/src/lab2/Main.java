@@ -16,9 +16,9 @@ public class Main {
 
         var bus_builder = new BusBuilder();
         bus_builder.BoardDriver();
-        bus_builder.BoardPassenger(new BusPassenger(BusPassengerType.ADULT));
-        bus_builder.BoardPassenger(new BusPassenger(BusPassengerType.CHILD));
-        bus_builder.BoardPassenger(new BusPassenger(BusPassengerType.DISCOUNT));
+        bus_builder.BoardPassenger(new BusPassenger());
+        bus_builder.BoardChildPassenger(new BusPassenger());
+        bus_builder.BoardDiscountPassenger(new BusPassenger());
         var bus = bus_builder.GetResult();
         bus.Run();
 

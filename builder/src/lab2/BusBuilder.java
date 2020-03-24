@@ -15,23 +15,26 @@ class BusBuilder implements Builder {
     @Override
     public void BoardPassenger(Passenger passenger) {
         _bus.BoardPassenger((BusPassenger) passenger);
-        switch (((BusPassenger) passenger).GetBusPassengerType()){
-            case ADULT:
-                _bus._overallCost += 100;
-                break;
-            case CHILD:
-                _bus._overallCost += 50;
-                break;
-            case DISCOUNT:
-                _bus._overallCost += 25;
-                break;
-        }
+        _bus._overallCost += 100;
+
+    }
+
+    @Override
+    public void BoardChildPassenger(Passenger passenger) {
+        _bus.BoardPassenger((BusPassenger) passenger);
+        _bus._overallCost += 50;
+    }
+
+    @Override
+    public void BoardDiscountPassenger(Passenger passenger) {
+        _bus.BoardPassenger((BusPassenger) passenger);
+        _bus._overallCost += 25;
     }
 
     @Override
     public void AddChildSeat() {}
 
-    public Bus GetResult() {
+    Bus GetResult() {
         var old_taxi = _bus;
         _bus = null;
         return old_taxi;

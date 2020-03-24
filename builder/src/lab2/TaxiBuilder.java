@@ -27,4 +27,10 @@ public class TaxiBuilder implements Builder{
         _taxi = null;
         return old_taxi;
     }
+
+    @Override
+    public void BoardChildPassenger(Passenger passenger) {}
+
+    @Override
+    public void BoardDiscountPassenger(Passenger passenger) {}
 }
